@@ -1,0 +1,6 @@
+Minimalism is nice, but add personality and touch to it.
+Figure out how to tile elements where text is of readable contrast and not intrusive.
+Add a contact form, and make resume/contact information more accessible.
+Figure out how to display project/portfolio pages in a more interesting fashion (ie be able to add content like images and text about the design process)
+Make contact information accessible - add facebook links, phone number, etc on front page.
+Don't look templatey.

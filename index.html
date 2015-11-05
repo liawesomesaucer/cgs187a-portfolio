@@ -1,25 +1,53 @@
-<html lang="en">
+
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<title>Vincent Liaw</title>
 	<link rel="stylesheet" href="stylesheets/stylesheet.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
+<!-- Add Contact info -->
 <body>
-<template name="index">
 	<header>
 		<div class="nav-wrapper">
 			<div class="nav">
 				<ul>
-					<li class="li-nav float-left"><a href="">VL</a></li>
-					<li class="li-nav float-right"><a href="/resume">Resume</a></li>
-					<li class="li-nav float-right"><a href="/portfolio">Portfolio</a></li>
+					<a name="top"></a>
+					<a href="/"><li class="li-nav float-left">VL</li></a>
+					<a href="/resume.pdf"><li class="li-nav float-right">Resume</li></a>
+					<a href="/portfolio"><li class="li-nav float-right">Portfolio</li></a>
 				</ul>
 			</div>
 		</div>
 	</header>
+	
+</body>
 
+<template name="tiles">
+
+	{{ #each projectList }}
+		<li class="tile">
+			<div class="grid tiled">
+				<!-- <h3 class="tile-header">{{ name }}</h3>
+				<p class="tile-description">
+					{{ short_description }}
+				</p> -->
+				<figure class="effect-sadie">
+					<img src="{{ img_url }}" alt="vincent3"/>
+					<figcaption>
+
+						<h2 class="tile-header" style="color:{{accent_color}};"><span>{{ name }}</span></h2>
+						<p>{{ short_description }}</p>
+						<a href="/project{{ url }}#top">View more</a>
+					</figcaption>			
+				</figure>
+			</div>
+		</li>
+	{{ /each }}
+</template>
+
+<template name="index">
 	<div class="content">
 		<div class="main-wrapper">
 			<div class="main 1p-height">
@@ -38,64 +66,70 @@
 
 			<!--  List of sites -->
 			<div class="page">
-				<h2 class="page-header"></h2>
+				<h2 class="page-header">Projects</h2>
 				<div class="project-list">
 					<ul class="projects inner-ul">
-						<li class="tile">
-							<div class="tiled">
-								<p>Projects go here</p>
-							</div>
-						</li>
-						<li class="tile">
-							<div class="tiled">
-							</div>
-						</li>
-						
-						<li class="tile">
-							<div class="tiled">
-							</div>
-						</li>	
-						<li class="tile">
-							<div class="tiled">
-							</div>
-						</li>	
-						<li class="tile">
-							<div class="tiled">
-							</div>
-						</li>	
-						<li class="tile">
-							<div class="tiled">
-							</div>
-						</li>	
+						{{> tiles }}
 					</ul>
 				</div>
 			</div>
 
 
 			<div class="page">
-				<h2 class="page-header"></h2>
+				<h2 class="page-header">Skills</h2>
 				<div class="skill-list">
 					<ul class="skills">
 						<li>
 							<div>
+								<img src="images/graph.png" />
 							</div>
 						</li>
 					</ul>
 				</div>
 			</div>
 
-			<div class="page">
+			<!-- <div class="page">
 				<h2 class="page-header"></h2>
 				<div class="comment">
-					<input></input>
 				</div>
-			</div>
-
-			<div class="footer">
-			</div>
+			</div> -->
+			<footer>
+			<div class="footer" style="text-align:center;">
+					<hr>
+					<p>Links | Go | Here | AyyLmao</p>
+				</div>
+			</footer>
 		</div>
-	</div>
 </template>
 
-</body>
-</html>
+
+<template name="project">
+<div class="content">
+	<div class="page">
+		<div class="project-header">
+			<div class="inline">
+				<div class="vincent-icon vincent-icon-small"></div>
+			</div>
+			<div class="inline" style="margin-top: 10px;">
+				<!-- <h1>{{> project['name']}}</h1> -->
+				<h1 class="projectName">{{ projectName }}</h1>
+				<!-- <h2>{{> project['description']}}</h2> -->
+				<h3 class="projectDescription">{{ description }}</h3>
+			</div>
+		</div>
+		<div class="project-body">
+			<img class="project-img" id="projectName" src="{{ img_url }}" />
+		</div>
+	</div>
+
+</div>
+</template>
+
+<template name="footer">
+	<footer>
+		<div class="footer">
+			<hr>
+			<p>Links | Go | Here | AyyLmao</p>
+		</div>
+	</footer>
+</template>
