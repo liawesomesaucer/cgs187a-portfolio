@@ -27,6 +27,15 @@ ProjectJSON = [
 		'img_url': '/images/tute.png',
 		'background_url': '/images/tute-background.png',
 	},
+	{
+		'name': 'Multiple Search',
+		'description': 'All your search bars on one page',
+		'short_description': 'All your search bars on one page',
+		'accent_color': '#006666',
+		'url': '/multiple-search',
+		'img_url': '/images/multiple_search.png',
+		'background_url': '/images/multiple_search.png',
+	},
 ]
 
 Router.route('/', function() {

@@ -124,11 +124,21 @@ a {
 	width: 100%;
 	min-height: 100vh;
 }
+.intro h2 {
+	text-align: center;
+}
+.intro {
+	max-width: 600px;
+	margin: auto;
+}
+.intro-text {
+	font-size: 24px;
+}
 li.tile {
 	position: relative;
 	/*padding: 2%;*/
-	width: 32.3%;
-	/*height: 300px;*/
+	width: 49%;
+	height: 400px;
 	border: 1px solid;
 	margin: -3px;
 	/*padding-bottom: 33.3%;*/
@@ -261,7 +271,7 @@ li.tile {
 	/*font-size: 68.5%;*/
 }
 figure.effect-sadie {
-	max-height: 300px;
+	max-height: 400px;
 	overflow: hidden;
 
 
