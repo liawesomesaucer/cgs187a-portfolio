@@ -5,6 +5,8 @@
 	<title>Vincent Liaw</title>
 	<link rel="stylesheet" href="stylesheets/stylesheet.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="jquery.min.js" />
+	<script type="text/javascript" src="effects.js" />
 </head>
 
 <!-- Add Contact info -->
@@ -14,8 +16,8 @@
 			<div class="nav">
 				<ul>
 					<a name="top"></a>
-					<a href="/"><li class="li-nav float-left">VL</li></a>
-					<a href="/resume.pdf"><li class="li-nav float-right">Resume</li></a>
+					<a href="/"><li class="li-nav float-left"><b>Vincent Liaw</b></li></a>
+					<a href="/resume.pdf" target="_blank"><li class="li-nav float-right">Resume</li></a>
 					<a href="/portfolio"><li class="li-nav float-right">Portfolio</li></a>
 				</ul>
 			</div>
@@ -27,23 +29,28 @@
 <template name="tiles">
 
 	{{ #each projectList }}
+	<a href="/project{{ url }}#top">
 		<li class="tile">
-			<div class="grid tiled">
+			<div class="grid tiled" >
 				<!-- <h3 class="tile-header">{{ name }}</h3>
 				<p class="tile-description">
 					{{ short_description }}
 				</p> -->
-				<figure class="effect-sadie">
-					<img src="{{ img_url }}" alt="vincent3"/>
-					<figcaption>
-
+					<div class="img_wrapper" style="background-color:{{accent_color}}">
+						<!-- <img src="{{ img_url }}" alt="vincent3"/> -->
+						<div class="img_inner" style="background: url({{img_url}}) no-repeat center 0; -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;"></div>
+					</div>
+					<div class="tile-text">
 						<h2 class="tile-header" style="color:{{accent_color}};"><span>{{ name }}</span></h2>
-						<p>{{ short_description }}</p>
-						<a href="/project{{ url }}#top">View more</a>
-					</figcaption>			
-				</figure>
+						<p class="tile-description">{{ short_description }}</p>
+					</div>
+				
 			</div>
 		</li>
+	</a>
 	{{ /each }}
 </template>
 
@@ -56,7 +63,7 @@
 				</div>
 
 				<div class="main-msg">
-					<h1>Vincent Liaw</h1>
+					<h1>Hi, I'm <b>Vincent.</b></h1>
 					<h3>I'm interested in AI,
 						design, and startups.</h3>
 						<h3>I study Compsci and Cogsci at UCSD</h3>
@@ -64,37 +71,44 @@
 				</div>
 			</div>
 
-			<div class="page intro">
-				<h2 class="page-header">Hi</h2>
-				<div class="intro-content">
-					<p class="intro-text">Hi, I'm Vincent, a student at UCSD. I like penguins, mechanical keyboards, and other nice things.
-					This site is a work in progress, but I'll hope you enjoy it in the meantime.  I'm currently working on
-					generating nice graphics for the skills section and figuring out how to style individual boxes.
-					Going for that dank simplistic look.  Now scroll down and check me out.</p>
+			<div class="pages-wrapper">
+				<div class="page-intro-wrapper">
+					<div class="page intro">
+						<h2 class="page-header">Quick Facts</h2>
+						<div class="intro-content">
+							<p class="intro-text">Hi, I'm Vincent, a student at UCSD. I like penguins, mechanical keyboards, and other nice things.
+							This site is a work in progress, but I'll hope you enjoy it in the meantime.  I'm currently working on
+							generating nice graphics for the skills section and figuring out how to style individual boxes.
+							Going for that dank simplistic look.  Now scroll down and check me out.</p>
+						</div>
+					</div>
 				</div>
-			</div>
 
-			<!--  List of sites -->
-			<div class="page">
-				<h2 class="page-header">Projects (I will adjust the scaling of individual images later)</h2>
-				<div class="project-list">
-					<ul class="projects inner-ul">
-						{{> tiles }}
-					</ul>
-				</div>
-			</div>
-
-
-			<div class="page">
-				<h2 class="page-header">Skills</h2>
-				<div class="skill-list">
-					<ul class="skills">
-						<li>
-							<div>
-								<img src="images/graph.png" />
+				<!--  List of sites -->
+				<div class="page-content-wrapper">
+					<div class="page">
+						<div class="page-projects">
+							<h2 class="page-header">Portfolio</h2>
+							<div class="project-list">
+								<ul class="projects inner-ul">
+									{{> tiles }}
+								</ul>
 							</div>
-						</li>
-					</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="page-skills-wrapper">
+					<div class="page">
+						<div class="page-skills">
+							<h2 class="page-header">Skills</h2>
+							<div class="skill-list">
+								<ul class="skills">
+									{{> skills }}
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -103,43 +117,69 @@
 				<div class="comment">
 				</div>
 			</div> -->
-			<footer>
-			<div class="footer" style="text-align:center;">
-					<hr>
-					<p>Links | Go | Here | AyyLmao</p>
-				</div>
-			</footer>
+			{{> footer }}
 		</div>
 </template>
 
-
-<template name="project">
-<div class="content">
-	<div class="page">
-		<div class="project-header">
-			<div class="inline">
-				<div class="vincent-icon vincent-icon-small"></div>
-			</div>
-			<div class="inline" style="margin-top: 10px;">
-				<!-- <h1>{{> project['name']}}</h1> -->
-				<h1 class="projectName">{{ projectName }}</h1>
-				<!-- <h2>{{> project['description']}}</h2> -->
-				<h3 class="projectDescription">{{ description }}</h3>
-			</div>
+<template name="skills">
+	{{ #each skillList }}
+	<li class="skill">
+		<div class="skill-div" style="background-color:{{ color }}; width:{{ width }}">
+			<div class="skill-left">{{ name }}</div>
+			<div class="skill-right">{{ mastery }}</div>
 		</div>
-		<div class="project-body">
-			<img class="project-img" id="projectName" src="{{ img_url }}" />
+	</li>
+	{{ /each }}
+</template>
+
+<template name="portfolio">
+	<div class="content">
+		<div class="pages-wrapper">
+			<div class="page">
+				<div class="page-projects">
+				<h2 class="page-header">Portfolio</h2>
+					<div class="project-list">
+						<ul class="projects inner-ul">
+							{{> tiles }}
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+</template>
 
+<template name="project">
+<div class="content" style="background-color:{{accent_color}}">
+	<div class="page">
+		<div class="pages-wrapper">
+
+			<div class="page-project">
+				<div class="project-header">
+					<div class="inline">
+						<div class="vincent-icon vincent-icon-small inline-vincent"></div>
+					</div>
+					<div class="inline" style="margin-top: 10px;color: white">
+						<!-- <h1>{{> project['name']}}</h1> -->
+						<h1 class="projectName">{{ projectName }}</h1>
+						<!-- <h2>{{> project['description']}}</h2> -->
+						<h3 class="projectDescription">{{ description }}</h3>
+					</div>
+				</div>
+				<div class="project-body">
+					<img class="project-img" id="projectName" src="{{ img_url }}" />
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<span style="color:white">{{> footer }}</span>
 </div>
 </template>
 
 <template name="footer">
-	<footer>
-		<div class="footer">
-			<hr>
-			<p>Resume | Portfolio | About | Contact</p>
-		</div>
-	</footer>
+	<div class="footer">
+		<p><a class="thick" href="/resume.pdf" target="_blank">Resume</a> | <a class="thick" href="/portfolio">Portfolio</a> | Contact</p>
+	</div>
 </template>
