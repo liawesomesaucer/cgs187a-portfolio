@@ -11,8 +11,8 @@ ProjectJSON = [
 	},
 	{
 		'name': 'BitMonster',
-		'description': "This won CalHacks 2.0's BlockChain API Challenge.  BitMonster eases the transition from social payment apps like Venmo to full-fledged, secure transactions with BitCoin.  With an intuitive UI, social aspect of transactions, and endless free aliases, BitMonster allows you to manage your funds and make secure and easy payments like never before.  In a team of 3, I focused on creating an intuitive UI and responsive buttons and forms.",
-		'short_description': "Anonymous Venmo for BitCoins.",
+		'description': "This won CalHacks 2.0's BlockChain API Challenge.  BitMonster eases the transition from social payment apps like Venmo to full-fledged, secure transactions with Bitcoin.  With an intuitive UI, social aspect of transactions, and endless free aliases, BitMonster allows you to manage your funds and make secure and easy payments like never before.  In a team of 3, I focused on creating an intuitive UI and responsive buttons and forms.",
+		'short_description': "Anonymous Venmo for Bitcoins.",
 		'accent_color': '#484c61',
 		'url': '/bitmonster',
 		'img_url':'/images/bitmonster.png',
