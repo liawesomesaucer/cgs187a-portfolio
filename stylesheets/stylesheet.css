@@ -110,7 +110,6 @@ header {
 .page-projects, .page-skills {
 	max-width: 1000px;
 	margin: auto;
-
 }
 .projects {
 	margin-right: -40px;
@@ -143,6 +142,8 @@ li.li-nav {
 li.li-nav:hover {
 	border-bottom: 2px solid;
 	margin-bottom: -2px;
+
+
 }
 li.float-left b {
 	float: left;
@@ -198,9 +199,14 @@ a {
 	width: 100%;
 	min-height: 500px;
 	height: 90vh;
-	background: rgb(57, 66, 85) ;
+	/* originally 57, 66, 85 */
+	background-color: rgb(57, 66, 85);
+	/*background: linear-gradient(rgba(54, 63, 81, 0.95), rgba(54, 63, 81, 0.9)), url(images/sf_goldengate.jpg) no-repeat center center;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	color: white;
-
 }
 .content {
 	background-color: #e6e6e6;
@@ -228,7 +234,14 @@ a {
 	/*width: 100%;*/
 	height: 320px;
 	padding-left: 10%;
-	padding: 35px 30px 2px 30px;
+	padding: 30px 30px 2px 30px;
+	transition-property: all;
+	transition-duration: .5s;
+}
+.img_wrapper:hover {
+/*	transition-property: all;
+	transition-duration: .5s;
+	padding: 30px 2px 2px 2px;*/
 }
 .img_inner {
 	-webkit-background-size: cover;
@@ -335,4 +348,37 @@ li.tile {
 }
 .skill-right {
 	float: right;
+}
+.hidden {
+	/* This is the individual project description page */
+	font-size: 18px;
+	letter-spacing: 1.5px;
+	font-weight: 300;
+	/*max-height: 100px;*/
+	margin-bottom: 20px;
+	/*overflow: hidden;*/
+}
+.quick-links {
+	text-align: center;
+	margin: auto;
+}
+.quick-links * {
+	display: inline-block;
+}
+
+.quick-links li {
+	font-size: 36px;
+	display: inline-block;
+}
+.quick-links a {
+	margin: 10px;
+}
+.quick-links a:hover {
+	color: #888;
+	transition-property: all;
+	transition-duration: .5s;
+}
+.quick-links a p {
+	font-size: 18px;
+	line-height: 36px;
 }

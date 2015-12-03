@@ -2,30 +2,39 @@
 ProjectJSON = [
 	{
 		'name': 'KingMaker',
-		'description': "This is kingmaker, a game-changing web app designed to streamline payments using PayPal's API and a cutting-edge facial recognition system using OpenCV. I worked on the server and designing and implementing the frontend. Built at Money2020 Vegas 2015 with a team of 5.  I focused on the frontend development, handling incoming data from our CV backend and converting them into pleasant and readable format.",
+		'description': "This is kingmaker, a game-changing web app designed to streamline payments using PayPal's API and a cutting-edge facial recognition system using OpenCV. I worked on the server and designing and implementing the frontend. Built at Money2020 Vegas 2015 with a team of 5.  I focused on the frontend development, handling incoming data from our CV backend and converting them into pleasant and readable format." + 
+						"  I worked on the design and implementation of the webapp, focusing on displaying loads of similar transactions in an orderly but intriguing fashion.  The transaction feed would live update as the backend sent facial recognition data to it.  I also implemented a frontpage emulating top-level SaaS companies' for our final pitch (to PayPal).",
 		'short_description': "Seamless facial recognition checkouts.",
 		'accent_color': '#48615d',
 		'url':'/kingmaker',
 		'img_url': '/images/kingmaker.png',
-		'background_url': '/images/kingmaker-background.png'
+		'background_url': '/images/kingmaker-background.png',
+		'link_url':'http://kingmaker.meteor.com',
 	},
 	{
 		'name': 'BitMonster',
-		'description': "This won CalHacks 2.0's BlockChain API Challenge.  BitMonster eases the transition from social payment apps like Venmo to full-fledged, secure transactions with BitCoin.  With an intuitive UI, social aspect of transactions, and endless free aliases, BitMonster allows you to manage your funds and make secure and easy payments like never before.  In a team of 3, I focused on creating an intuitive UI and responsive buttons and forms.",
+		'description': "This won CalHacks 2.0's BlockChain API Challenge.  BitMonster eases the transition from social payment apps like Venmo to full-fledged, secure transactions with BitCoin.  With an intuitive UI, social aspect of transactions, and endless free aliases, BitMonster allows you to manage your funds and make secure and easy payments like never before.  In a team of 3, I focused on creating an intuitive UI and responsive buttons and forms." +
+						"  I focused on creating a slightly facebook-messenger inspired web application, where the feed would be prominently displayed and update as time went on.  The left bar would continue with you as you scrolled, allowing easy access to paying and checking profiles anytime during a scrolling escapade.  The navigation buttons were made to have effects on hover to signify their clickability, since the simplistic look may have left some buttons harder to find." +
+						"  The payment option had autocomplete to help users identify the aliases they wished to pay, allowing them to not accidentally try sending money to a nonexistant account.  Upon logging out or entering wrong information, a large banner would display the error message, giving users live feedback on their errors.  BitMonster was featured in BlockChain's blog for winning CalHacks 2.0's BlockChain API Prize.",
 		'short_description': "Anonymous Venmo for BitCoins.",
 		'accent_color': '#484c61',
 		'url': '/bitmonster',
 		'img_url':'/images/bitmonster.png',
-		'background_url': '/images/bitmonster-background.png'
+		'background_url': '/images/bitmonster-background.png',
+		'link_url':'http://bitmonster.herokuapp.com',
 	},
 	{
 		'name': 'Tute',
-		'description': "Imagine a world where you could get paid for studying well, and spend a bit of that for expert lessons on other, more difficult subjects.  Enter Tute.  Tute eliminates the middleman of traditional tutoring centers, allowing people to directly tutor each other for cash, allowing for cheaper and more personalized results.  Tute was built with a team of 5, with an android and webapp.  I worked on the design and implementation of the webapp.",
+		'description': "Imagine a world where you could get paid for studying well, and spend a bit of that for expert lessons on other, more difficult subjects.  Enter Tute.  Tute eliminates the middleman of traditional tutoring centers, allowing people to directly tutor each other for cash, allowing for cheaper and more personalized results.  Tute was built with a team of 4 at LAHacks 2015, with an android and webapp." + 
+						"  I worked on the design and implementation of the webapp.  Firstly I thought about what a mostly mobile app would require from its web counterpart.  The webapp would need to present information in a fluid and enticing manner to get people to sign up for the mobile app." +
+						"  It would need to be fast and responsive and present enough information and allow a quick way for people to sign up.  Therefore I decided on using multiple columns to display items, with attractive lines like 'get $ for teaching others', and more text on demand as the user scrolled."+
+						"  It would then contain a form for conversions.  Ultimately, considering this was a hackathon project, I added a short description of the hackathon project and team members at its end to commemorate this project.",
 		'short_description': "Uber for tutors.",
 		'accent_color': '#333',
 		'url': '/tute',
 		'img_url': '/images/tute.png',
 		'background_url': '/images/tute-background.png',
+		'link_url':'http://liawesomesaucer.github.io/cosmic/templates/',
 	},
 	{
 		'name': 'Multiple Search',
@@ -35,18 +44,19 @@ ProjectJSON = [
 		'url': '/multisearch',
 		'img_url': '/images/multiple_search.png',
 		'background_url': '/images/multiple_search.png',
+		'link_url':'http://liawesomesaucer.github.io/multiple-search',
 	},
 ]
 SkillsJSON = [
 	{
 		'name': 'Python',
-		'color': 'blue',
+		'color': '#003366',
 		'width': '90%',
-		'mastery': 'expert'
+		'mastery': 'experienced'
 	},
 	{
 		'name': 'JavaScript',
-		'color': 'red',
+		'color': '#660033',
 		'width': '80%',
 		'mastery': 'experienced'
 	},
@@ -54,31 +64,36 @@ SkillsJSON = [
 		'name': 'Design',
 		'color': '#3d0099',
 		'width': '70%',
-		'mastery': 'advanced'
+		'mastery': 'ok'
 	},
 	{
-		'name': 'School',
+		'name': 'Money',
 		'color': '#666',
 		'width': '40%',
-		'mastery': 'bad'
+		'mastery': 'ok'
 	},
 	{
 		'name': 'C++',
 		'color': '#006666',
-		'width': '80%',
+		'width': '70%',
 		'mastery': 'experienced'
 	},
 ]
+
 Router.route('/', function() {
 	var projectList = ProjectJSON;
 	var skillList = SkillsJSON;
 	this.render('Index', {data: {projectList: projectList, skillList: skillList}});
+	$(window).scrollTop(0);
+
 	// this.render( 'Footer');
 
 });
 Router.route('portfolio', function() {
 	var projectList = ProjectJSON;
 	this.render('Portfolio', {data: {projectList: projectList}});
+	$(window).scrollTop(0);
+
 })
 Router.route('project/:project', function() {
 	var projectList = ProjectJSON;
@@ -94,7 +109,10 @@ Router.route('project/:project', function() {
 	var description = item['description'];
 	var img_url = item['img_url'];
 	var accent_color = item['accent_color'];
+	var link_url = item['link_url'];
 	// Send data on thingy maybe idk
-	this.render( 'Project', {data:{ projectName: projectName, description:description, img_url: img_url, accent_color:accent_color}});
+	this.render( 'Project', {data:{ projectName: projectName, description:description, img_url: img_url, accent_color:accent_color, link_url: link_url}});
+	$(window).scrollTop(0);
+
 	// this.render( 'Footer');
 });
