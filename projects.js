@@ -13,10 +13,8 @@ ProjectJSON = [
 	},
 	{
 		'name': 'BitMonster',
-		'description': "This won CalHacks 2.0's BlockChain API Challenge.  BitMonster eases the transition from social payment apps like Venmo to full-fledged, secure transactions with BitCoin.  With an intuitive UI, social aspect of transactions, and endless free aliases, BitMonster allows you to manage your funds and make secure and easy payments like never before.  In a team of 3, I focused on creating an intuitive UI and responsive buttons and forms." +
-						"  I focused on creating a slightly facebook-messenger inspired web application, where the feed would be prominently displayed and update as time went on.  The left bar would continue with you as you scrolled, allowing easy access to paying and checking profiles anytime during a scrolling escapade.  The navigation buttons were made to have effects on hover to signify their clickability, since the simplistic look may have left some buttons harder to find." +
-						"  The payment option had autocomplete to help users identify the aliases they wished to pay, allowing them to not accidentally try sending money to a nonexistant account.  Upon logging out or entering wrong information, a large banner would display the error message, giving users live feedback on their errors.  BitMonster was featured in BlockChain's blog for winning CalHacks 2.0's BlockChain API Prize.",
-		'short_description': "Anonymous Venmo for BitCoins.",
+		'description': "This won CalHacks 2.0's BlockChain API Challenge.  BitMonster eases the transition from social payment apps like Venmo to full-fledged, secure transactions with Bitcoin.  With an intuitive UI, social aspect of transactions, and endless free aliases, BitMonster allows you to manage your funds and make secure and easy payments like never before.  In a team of 3, I focused on creating an intuitive UI and responsive buttons and forms.",
+		'short_description': "Anonymous Venmo for Bitcoins.",
 		'accent_color': '#484c61',
 		'url': '/bitmonster',
 		'img_url':'/images/bitmonster.png',
