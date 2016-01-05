@@ -1,3 +1,8 @@
+@font-face {
+	font-family: OpenSans-Light;
+	src: url(fonts/OpenSans-Light.ttf);
+}
+
 html, body{
 	padding: 0px;
 	margin: 0px;
@@ -5,15 +10,15 @@ html, body{
 	overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6, p, a, li, ul{
-	font-family: Segoe UI Light, Segoe UI, Roboto, Helvetica, sans-serif;
+	font-family: OpenSans-Light, Segoe UI Light, Roboto, Helvetica, sans-serif;
 	font-weight: normal;
 	letter-spacing: 1px;
 }
 a.thick  {
-	font-family: Segoe UI, Helvetica, sans-serif;
+	font-family: OpenSans-Light, Segoe UI, Helvetica, sans-serif;
 }
 p {
-	font-family: Segoe UI, Helvetica, sans-serif;
+	font-family: OpenSans-Light, Segoe UI, Helvetica, sans-serif;
 	letter-spacing: 1px;
 }
 h1 {
@@ -371,6 +376,7 @@ li.tile {
 	display: inline-block;
 }
 .quick-links a {
+	color: #fff;
 	margin: 10px;
 }
 .quick-links a:hover {

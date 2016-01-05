@@ -12,6 +12,18 @@ ProjectJSON = [
 		'link_url':'http://kingmaker.meteor.com',
 	},
 	{
+		'name': 'Exposr',
+		'description': 	"Location-based photography sharing site for sharing beautiful photographs and finding inspiration.  " +
+						"Built for COGS187A.  Backend built with Python-Flask deployed on Heroku; photos stored in AWS." +
+						"Team of 5. I worked on design and most of the implementation.",
+		'short_description': 'Stunning photographic inspiration.',
+		'accent_color': '#3e3955',
+		'url': '/exposr',
+		'img_url': '/images/exposr1.png',
+		'background_url': '/images/exposr1.png',
+		'link_url':'http://xposr.herokuapp.com',
+	},
+	{
 		'name': 'BitMonster',
 		'description': "This won CalHacks 2.0's BlockChain API Challenge.  BitMonster eases the transition from social payment apps like Venmo to full-fledged, secure transactions with Bitcoin.  With an intuitive UI, social aspect of transactions, and endless free aliases, BitMonster allows you to manage your funds and make secure and easy payments like never before.  In a team of 3, I focused on creating an intuitive UI and responsive buttons and forms.",
 		'short_description': "Anonymous Venmo for Bitcoins.",
@@ -43,7 +55,7 @@ ProjectJSON = [
 		'img_url': '/images/multiple_search.png',
 		'background_url': '/images/multiple_search.png',
 		'link_url':'http://liawesomesaucer.github.io/multiple-search',
-	},
+	}
 ]
 SkillsJSON = [
 	{
@@ -60,15 +72,15 @@ SkillsJSON = [
 	},
 	{
 		'name': 'Design',
-		'color': '#3d0099',
+		'color': '#553942',
 		'width': '70%',
-		'mastery': 'ok'
+		'mastery': 'experienced'
 	},
 	{
-		'name': 'Money',
-		'color': '#666',
-		'width': '40%',
-		'mastery': 'ok'
+		'name': 'HTML/CSS',
+		'color': '#3e3955',
+		'width': '80%',
+		'mastery': 'experienced'
 	},
 	{
 		'name': 'C++',
@@ -83,26 +95,24 @@ Router.route('/', function() {
 	var skillList = SkillsJSON;
 	this.render('Index', {data: {projectList: projectList, skillList: skillList}});
 	$(window).scrollTop(0);
-
-	// this.render( 'Footer');
-
 });
 Router.route('portfolio', function() {
 	var projectList = ProjectJSON;
 	this.render('Portfolio', {data: {projectList: projectList}});
 	$(window).scrollTop(0);
 
-})
+});
 Router.route('project/:project', function() {
 	var projectList = ProjectJSON;
 
 	for (var i=0; i<projectList.length; i++) {
-		console.log(projectList[i].name);
-		if (projectList[i].name.toLowerCase() === this.params.project.toLowerCase()) {
+		// console.log(projectList[i].name);
+		if (projectList[i].name && (projectList[i].name.toLowerCase() === this.params.project.toLowerCase())) {
 			item = projectList[i];
 			break;
 		}
 	}
+
 	var projectName = item['name'];
 	var description = item['description'];
 	var img_url = item['img_url'];
@@ -111,6 +121,4 @@ Router.route('project/:project', function() {
 	// Send data on thingy maybe idk
 	this.render( 'Project', {data:{ projectName: projectName, description:description, img_url: img_url, accent_color:accent_color, link_url: link_url}});
 	$(window).scrollTop(0);
-
-	// this.render( 'Footer');
 });
